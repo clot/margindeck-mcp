@@ -1,0 +1,20 @@
+{
+  "name": "margindeck-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Node.js desktop MCP connector for the MarginDeck Mac app",
+  "type": "module",
+  "license": "MIT",
+  "author": { "name": "MadMark", "url": "https://github.com/clot" },
+  "repository": { "type": "git", "url": "https://github.com/clot/margindeck-mcp.git" },
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test",
+    "validate": "mcpb validate manifest.json",
+    "bundle": "node scripts/bundle.js",
+    "check": "npm test && npm run validate && npm run bundle"
+  },
+  "devDependencies": { "@anthropic-ai/mcpb": "2.1.2" },
+  "overrides": { "tmp": "0.2.7" }
+}

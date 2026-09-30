@@ -1,0 +1,11 @@
+{
+  "display_name": "MarginDeck",
+  "description": "通过 Claude 查看 MarginDeck Mac 应用中的收入、成本、贡献利润和现金跑道。",
+  "long_description": "需要 macOS 14 或更新系统，以及已安装并运行、已开启 MCP 的 MarginDeck 1.6.0 或更新版本。读取财务数据前，需要在 MarginDeck 中核对并批准配对；拟保存的记录需要单独在 App 内审核确认。此 Node.js 连接器调用已安装 MarginDeck 中的签名凭证辅助程序，不包含 App 或辅助程序。返回给 Claude 的数据会与 Claude 共享。连接器不会自动启动 App 或批准连接。",
+  "user_config": {
+    "app_path": {
+      "title": "MarginDeck 应用位置",
+      "description": "选择已安装的 MarginDeck.app（1.6.0 或更新版本）。扩展不会安装 App。"
+    }
+  }
+}

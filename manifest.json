@@ -1,0 +1,36 @@
+{
+  "manifest_version": "0.3",
+  "name": "margindeck",
+  "display_name": "MarginDeck",
+  "version": "0.1.0",
+  "description": "Review revenue, costs, contribution profit, and cash runway from the MarginDeck Mac app with Claude.",
+  "long_description": "Requires macOS 14 or later and MarginDeck 1.6.0 or later, installed and running with MCP enabled. Approve this client's pairing in MarginDeck before financial reads. Proposed record changes require separate in-app confirmation. This Node.js connector calls the signed credential helper in your installed MarginDeck app; the app and helper are not included. Data returned to Claude is shared with Claude. The connector does not start the app or approve connections for you.",
+  "author": { "name": "MadMark", "url": "https://github.com/clot" },
+  "repository": { "type": "git", "url": "https://github.com/clot/margindeck-mcp" },
+  "homepage": "https://www.margindeck.app",
+  "documentation": "https://github.com/clot/margindeck-mcp#readme",
+  "support": "https://github.com/clot/margindeck-mcp/issues",
+  "license": "MIT",
+  "privacy_policies": ["https://www.margindeck.app/privacy"],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js", "--app", "${user_config.app_path}"]
+    }
+  },
+  "compatibility": { "platforms": ["darwin"], "runtimes": { "node": ">=20" } },
+  "user_config": {
+    "app_path": {
+      "type": "directory",
+      "title": "MarginDeck app location",
+      "description": "Select your installed MarginDeck.app (version 1.6.0 or later). This extension does not install the app.",
+      "default": "/Applications/MarginDeck.app",
+      "required": true
+    }
+  },
+  "tools_generated": true,
+  "keywords": ["business", "revenue", "costs", "cash runway", "macOS"],
+  "localization": { "resources": "mcpb-resources/${locale}.json", "default_locale": "en-US" }
+}
